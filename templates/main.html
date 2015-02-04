@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+<head>
+    <meta charset= "UTF-8">
+        <title>Task List</title>
+</head>
+<style>
+    table, th, td{
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+<body>
+    <h1>Task List</h1>
+    <form method="post">
+        <div class = "row">
+            <label for="category">Category:</label>
+            <input type = "text" name = "category" id = "category">
+        </div>
+        <div class = "row">
+            <label for="priority">Priority:</label>
+            <input type = "number" name = "priority" id = "priority">
+        </div>
+        <div class = "row">
+            <label for="description">Description:</label>
+            <input type = "text" name = "description" id = "description">
+        </div>
+        <div>
+            <button type = "submit" class = "btn btn-default">Submit</button>
+        </div>
+        
+        <div class="table">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td>Category</td>
+                        <td>Priority</td>
+                        <td>Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for task in tasks %}
+                        <tr>
+                            <td>{{ task.category }}</td>
+                            <td>{{ task.priority }}</td>
+                            <td>{{ task.description }}</td>
+                        </td>
+                    {% endfor %}
+                            
+                </tbody>
+                    
+            </table>
+        </div>
+        </div>
+    </form>
+</body>
+
+</html>
