@@ -40,6 +40,11 @@ def tasks():
                 raise Exception
         except:
             return "invalid priority"
+        try:
+            if category == "":
+                raise Exception
+        except:
+            return "No category"
         add_task(category,priority, description)
         return redirect(url_for('tasks'))
     elif request.method == 'GET':
